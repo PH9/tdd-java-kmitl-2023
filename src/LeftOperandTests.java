@@ -12,4 +12,11 @@ public class LeftOperandTests {
         LeftOperand actual = new LeftOperand(pattern, operand);
         assertEquals(expected, actual.toString());
     }
+
+    @ParameterizedTest
+    @CsvSource({"1, 1, 1", "1, 2, 2", "1, 3, 3"})
+    public void leftOperandWithPattern1(int pattern, int operand, String expected) {
+        LeftOperand actual = new LeftOperand(pattern, operand);
+        assertEquals(expected, actual.toString());
+    }
 }

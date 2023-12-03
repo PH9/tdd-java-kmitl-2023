@@ -8,7 +8,10 @@ public class LeftOperand {
     }
 
     @Override public String toString() {
-        String[] operands = {"One", "Two", "Three"};
-        return operands[operand-1];
+        if (pattern == 2) {
+            String[] operands = {"One", "Two", "Three"};
+            return operands[operand-1];
+        }
+        return "" + operand;
     }
 }
