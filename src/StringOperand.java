@@ -1,11 +1,14 @@
 public class StringOperand implements Operand{
 
-    public StringOperand(int operand) {
+    int operand;
 
+    public StringOperand(int operand) {
+        this.operand = operand;
     }
 
     @Override
     public String toString() {
-        return "One";
+        String[] strings = {"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
+        return strings[operand - 1];
     }
 }
