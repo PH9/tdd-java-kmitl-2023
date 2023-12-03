@@ -1,9 +1,9 @@
 public class Captcha {
     Operand leftOperand;
-    RightOperand rightOperand;
+    Operand rightOperand;
     public Captcha(int pattern, int leftOperand, int operator, int rightOperand) {
         this.leftOperand = OperandFactory.createLeftOperand(pattern, leftOperand);
-        this.rightOperand = new RightOperand(pattern, rightOperand);
+        this.rightOperand = OperandFactory.createRightOperand(pattern, rightOperand);
     }
 
     @Override public  String toString() {

@@ -5,4 +5,11 @@ public class OperandFactory {
         }
         return new IntegerOperand(operand);
     }
+
+    public static Operand createRightOperand(int pattern, int operand) {
+        if(pattern == 1) {
+            return new StringOperand(operand);
+        }
+        return new IntegerOperand(operand);
+    }
 }

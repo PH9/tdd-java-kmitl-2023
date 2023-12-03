@@ -23,6 +23,17 @@ public class CaptchaTests {
         assertEquals(1, spy.toStringCalledCount);
     }
 
+    @Test
+    void getRightOperand_rightOperand_toString_shouldCalledOnce() {
+        Captcha sut = new Captcha(1, 1, 1, 1);
+        OperandSpy spy = new OperandSpy();
+        sut.rightOperand = spy;
+
+        sut.getRightOperand();
+
+        assertEquals(1, spy.toStringCalledCount);
+    }
+
     private static class OperandSpy implements Operand {
         public int toStringCalledCount;
 
