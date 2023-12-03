@@ -12,7 +12,7 @@ public class RightOperandTests {
     }
 
     @ParameterizedTest
-    @CsvSource({"2, 1, One", "2, 2, Two", "2, 3, Three"})
+    @CsvSource({"1, 1, One", "1, 2, Two", "1, 3, Three"})
     public void rightOperandWithPattern1(int pattern, int operand, String expected) {
         RightOperand actual = new RightOperand(pattern, operand);
         assertEquals(expected, actual.toString());

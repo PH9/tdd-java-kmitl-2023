@@ -1,5 +1,5 @@
 public class Captcha {
-    LeftOperand leftOperand;
+    Operand leftOperand;
     RightOperand rightOperand;
     public Captcha(int pattern, int leftOperand, int operator, int rightOperand) {
         this.leftOperand = new LeftOperand(pattern, leftOperand);

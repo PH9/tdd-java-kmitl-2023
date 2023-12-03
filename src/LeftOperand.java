@@ -1,4 +1,4 @@
-public class LeftOperand {
+public class LeftOperand implements Operand {
 
     int pattern;
     int operand;
