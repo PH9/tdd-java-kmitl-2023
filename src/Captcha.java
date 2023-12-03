@@ -2,7 +2,7 @@ public class Captcha {
     Operand leftOperand;
     RightOperand rightOperand;
     public Captcha(int pattern, int leftOperand, int operator, int rightOperand) {
-        this.leftOperand = new LeftOperand(pattern, leftOperand);
+        this.leftOperand = OperandFactory.createLeftOperand(pattern, leftOperand);
         this.rightOperand = new RightOperand(pattern, rightOperand);
     }
 
