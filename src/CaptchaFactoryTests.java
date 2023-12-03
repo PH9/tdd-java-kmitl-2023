@@ -13,12 +13,15 @@ public class CaptchaFactoryTests {
         SecureRandomSpy spy = new SecureRandomSpy();
         CaptchaFactory sut = new CaptchaFactory(spy);
 
-        sut.createCaptcha();
+        Captcha captcha = sut.createCaptcha();
 
         assertEquals(4, spy.nextIntWithOriginAndBoundCount);
 
         assertEquals(new ArrayList<>(Arrays.asList(1, 1, 1, 1)), spy.nextIntOriginParams);
         assertEquals(new ArrayList<>(Arrays.asList(3, 10, 4, 10)), spy.nextIntBoundParams);
+        assertEquals("2", captcha.getLeftOperand());
+        assertEquals("/", captcha.getOperator());
+        assertEquals("Four", captcha.getRightOperand());
     }
 
     private static class SecureRandomSpy implements IntegerRandomizer{
@@ -31,7 +34,7 @@ public class CaptchaFactoryTests {
             nextIntWithOriginAndBoundCount += 1;
             nextIntOriginParams.add(origin);
             nextIntBoundParams.add(bound);
-            return -1;
+            return nextIntWithOriginAndBoundCount;
         }
     }
 }

@@ -1,8 +1,10 @@
 public class Captcha {
     Operand leftOperand;
     Operand rightOperand;
+    int operator;
     public Captcha(int pattern, int leftOperand, int operator, int rightOperand) {
         this.leftOperand = OperandFactory.createLeftOperand(pattern, leftOperand);
+        this.operator = operator;
         this.rightOperand = OperandFactory.createRightOperand(pattern, rightOperand);
     }
 
@@ -19,6 +21,12 @@ public class Captcha {
     }
 
     public String getOperator() {
+        if (operator == 2) {
+            return "-";
+        }
+        if (operator == 3) {
+            return "/";
+        }
         return "+";
     }
 }
